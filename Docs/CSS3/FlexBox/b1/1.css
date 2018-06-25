@@ -1,0 +1,72 @@
+.container {
+	border:1px solid black;
+	padding:5px;
+	display:flex; /*mặc định display flex sẽ chuyển các div con thành hàng ngang*/ 
+	/*nếu muốn đổi trục ( nghĩa là chuyển các div con về lại thành hàng dọc ) thì
+	ta dùng thuôc tính flex-direction: row|column|row-reverse|column-reverse;	*/
+	/*flex-direction: row-reverse;*/ /*đặc biết khi sử dụng row-reverse thì div nó sẽ qua bên phải và xếp theo thứ tự ngược lại*/
+	
+	/*mặc định flex sẽ canh sao cho các div con không bị xuống hàng khi ta sử dụng width cho item 1000px*/
+	/*nhưng khi sử dụng flex-wrap thì các div con sẽ xuống hàng khi cho width 1000px ( giống như thông thường khi không dùng flex )*/
+	/*flex-wrap: wrap;*/
+
+
+	/*nếu như container còn khoảng trống thì có thể sử dụng justify-content*/
+	/*justify-content: flex-start; canh tất cả bên trái của container dạng như float left*/
+	/*justify-content: flex-end; canh tất cả bên phải/dạng như float right nhưng không đổi vị trí item*/
+	/*justify-content: center; sẽ canh các item ở giữa container*/
+	/*justify-content: space-between; sẽ canh đều các item sát biên của container*/
+	/*justify-content: space-around; cũng canh đều các item nhưng không sát biên container*/
+	
+	
+	/*align-items sẽ canh ngược với thằng justify-content*/
+	/*mặc định justify-content sẽ canh theo chiều ngang*/
+	/*mặc định align-items sẽ canh theo chiều dọc kéo item theo height của container*/
+	align-items: baseline;
+	height:500px;
+	width:700px;
+
+	flex-direction: column;
+}
+
+.item {
+	border:1px solid black;
+	background: blue;
+	padding: 10px;
+	width:50px;
+
+
+	/*gán kích thước cho item*/
+	/*flex-basis: 500px;*/
+}
+
+.item1 {
+	/*order sẽ sắp xếp các div theo vị trí mình mong muốn*/
+	order: 4;
+
+	/*hiểu nom na là nó sẽ lấy phần dư của container và đắp vào div1*/
+	/*và div1 sẽ dài ra bằng 2 lần div 2*/
+	/*flex-grow: 2;*/
+
+
+}
+
+.item2 {
+	/*order sẽ sắp xếp các div theo vị trí mình mong muốn*/
+	order: 2;
+	/*flex-grow: 1;*/
+}
+
+.item3 {
+	/*order sẽ sắp xếp các div theo vị trí mình mong muốn*/
+	order: 3;
+
+	/*mặc định mỗi div sẽ có flex-shrink là 1*/
+	/*nhưng muốn cho div3 này co lại nhiều hơn các div khác thì ta cho bằng 2 hoặc lớn hơn*/
+	/*flex-shrink : 2;*/
+}
+
+.item4 {
+	/*order sẽ sắp xếp các div theo vị trí mình mong muốn*/	
+	order: 1;
+}
